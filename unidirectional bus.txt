@@ -1,0 +1,53 @@
+
+module unidirectional_bus (
+    input [3:0] I,    
+    input CNT,         
+    output [3:0] Z     
+);
+   
+    assign Z = (CNT) ? I : 4'b0000;
+endmodule
+
+
+
+
+module tb_unidirectional_bus;
+    reg [3:0] I;    // 4-bit input
+    reg CNT;        // Control input
+    wire [3:0] Z;   // 4-bit output
+
+
+    unidirectional_bus uut (
+        .I(I),
+        .CNT(CNT),
+        .Z(Z)
+    );
+
+
+    initial begin
+      
+        $display("Time\tI\tCNT\tZ");
+        $display("------------------------");
+
+        I = 4'b0000; CNT = 1'b0; #10;
+        $display("%0d\t%b\t%b\t%b", $time, I, CNT, Z);
+
+        I = 4'b1010; CNT = 1'b0; #10;
+        $display("%0d\t%b\t%b\t%b", $time, I, CNT, Z);
+
+        I = 4'b1100; CNT = 1'b1; #10;
+        $display("%0d\t%b\t%b\t%b", $time, I, CNT, Z);
+
+        I = 4'b1111; CNT = 1'b1; #10;
+        $display("%0d\t%b\t%b\t%b", $time, I, CNT, Z);
+
+        I = 4'b0011; CNT = 1'b0; #10;
+        $display("%0d\t%b\t%b\t%b", $time, I, CNT, Z);
+
+        I = 4'b0101; CNT = 1'b1; #10;
+        $display("%0d\t%b\t%b\t%b", $time, I, CNT, Z);
+
+      
+        $finish;
+    end
+endmodule

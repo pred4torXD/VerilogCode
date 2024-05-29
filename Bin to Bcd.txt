@@ -1,0 +1,52 @@
+module bintobcd(
+input [3:0]a,
+output [4:0]b
+);
+assign b[4] = (a[3] & a[2]) | (a[3] & a[1]);
+assign b[3] = a[3] & ~a[2] & ~a[1];
+assign b[2] = (~a[3] & a[2]) | (a[2] & a[1]);
+assign b[1] = (a[3] & a[2] & ~a[1]) | (~a[3] & a[1]);
+assign b[0] = a[0];
+endmodule
+
+
+
+module binobcd_tb();
+reg [3:0]a;
+wire [4:0]b;
+bintobcd uut(.a(a),.b(b));
+initial begin
+a=0;
+#100;
+a=1;
+#100;
+a=2;
+#100;
+a=3;
+#100;
+a=4;
+#100;
+a=5;
+#100;
+a=6;
+#100;
+a=7;
+#100;
+a=8;
+#100;
+a=9;
+#100;
+a=10;
+#100;
+a=11;
+#100;
+a=12;
+#100;
+a=13;
+#100;
+a=14;
+#100;
+a=15;
+#100;
+end
+endmodule

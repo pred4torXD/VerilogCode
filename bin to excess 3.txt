@@ -1,0 +1,51 @@
+module bintoex3(
+input [3:0]a,
+output [4:0]e
+);
+assign e[4] = (a[3] & a[2] & a[0]) | (a[3] & a[2] & a[1]);
+assign e[3] = (~a[1] & ~a[0] & a[3]) | (a[3] & ~a[2]) | (~a[3] & a[2] & a[0]) | (~a[3] & a[2] & a[1]);
+assign e[2] = (~a[1] & ~a[0] & a[2]) | (~a[2] & a[0]) | (~a[2] & a[1]);
+assign e[1] = (~a[1] & ~a[0]) | (a[1] & a[0]);
+assign e[0] = ~a[0];
+endmodule
+
+
+module bintoex3_tb();
+reg [3:0]a;
+wire [4:0]e;
+bintoex3 uut(.a(a),.e(e));
+initial begin
+a=0;
+#100;
+a=1;
+#100;
+a=2;
+#100;
+a=3;
+#100;
+a=4;
+#100;
+a=5;
+#100;
+a=6;
+#100;
+a=7;
+#100;
+a=8;
+#100;
+a=9;
+#100;
+a=10;
+#100;
+a=11;
+#100;
+a=12;
+#100;
+a=13;
+#100;
+a=14;
+#100;
+a=15;
+#100;
+end
+endmodule
