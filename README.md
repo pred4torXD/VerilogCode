@@ -30,13 +30,10 @@ To work with the files in this repository, you need the following tools:
 
 📚 Contents
 
-src/: Contains the main Verilog modules.
-
-tb/: Includes testbenches for verifying each module.
-
-sim/: Output files from simulations and waveform files.
-
-docs/: Block diagrams, flowcharts, and design documentation.
+1. src/: Contains the main Verilog modules.
+2. tb/: Includes testbenches for verifying each module.
+3. sim/: Output files from simulations and waveform files.
+4. docs/: Block diagrams, flowcharts, and design documentation.
 
 📌 Notes
 
