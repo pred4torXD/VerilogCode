@@ -29,6 +29,7 @@ To work with the files in this repository, you need the following tools:
    
 
 📚 Contents
+
 src/: Contains the main Verilog modules.
 
 tb/: Includes testbenches for verifying each module.
@@ -38,14 +39,15 @@ sim/: Output files from simulations and waveform files.
 docs/: Block diagrams, flowcharts, and design documentation.
 
 📌 Notes
-Each module is self-contained with a corresponding testbench.
 
-All modules are written in Verilog HDL and follow standard coding conventions.
-
-Please refer to individual module comments for functionality.
+1. Each module is self-contained with a corresponding testbench.
+2. All modules are written in Verilog HDL and follow standard coding conventions.
+3. Please refer to individual module comments for functionality.
 
 🤝 Contributing
+
 Pull requests are welcome! If you want to contribute, please fork the repository and create a new branch.
 
 📄 License
+
 This repository is open-source and available under the MIT License.
